@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Bug Fixer</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #edf3ff;
+            text-align: center;
+            padding: 50px 15px;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: auto;
+            padding: 25px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px #cbd6e8;
+        }
+
+        h1 {
+            color: #4169a1;
+        }
+
+        #count {
+            font-size: 40px;
+            color: #4169a1;
+            font-weight: bold;
+        }
+
+        button {
+            padding: 12px 18px;
+            margin: 5px;
+            border: none;
+            border-radius: 8px;
+            background: #4169a1;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>JavaScript Bug Fixer</h1>
+        <p>Test the corrected counter program.</p>
+
+        <p id="count">0</p>
+
+        <button onclick="decrease()">Decrease -</button>
+        <button onclick="increase()">Increase +</button>
+        <button onclick="reset()">Reset</button>
+
+        <p id="message">Counter is ready!</p>
+    </div>
+
+    <script>
+        let count = 0;
+
+        function updateDisplay() {
+            document.getElementById("count").textContent = count;
+        }
+
+        function increase() {
+            count++;
+            updateDisplay();
+            document.getElementById("message").textContent =
+                "Number increased successfully!";
+        }
+
+        function decrease() {
+            count--;
+            updateDisplay();
+            document.getElementById("message").textContent =
+                "Number decreased successfully!";
+        }
+
+        function reset() {
+            count = 0;
+            updateDisplay();
+            document.getElementById("message").textContent =
+                "Counter has been reset!";
+        }
+    </script>
+</body>
+</html>
